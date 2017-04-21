@@ -37,8 +37,7 @@ const theme = createTheme(
   {
     primary: "#263238",
     secondary: "#2196F3",
-    tertiary: "#fff",
-    quartenary: "#CECECE"
+    tertiary: "#fff"
   },
   {
     primary: "Montserrat",
@@ -55,11 +54,11 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+          <Heading size={1} fill lineHeight={1} textColor="secondary">
+            Building a Node CLI with Commander.js
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+          <Text margin="1em 0 0" textColor="tertiary" textSize="48px">
+            by Bernardo Pacheco
           </Text>
         </Slide>
         <Slide transition={["zoom", "slide"]} bgColor="primary">
