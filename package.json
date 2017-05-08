@@ -40,7 +40,7 @@
     "eslint-config-formidable": "^2.0.1",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-react": "^6.4.1",
+    "eslint-plugin-react": "^7.0.0",
     "express": "^4.13.3",
     "file-loader": "0.11.1",
     "html-loader": "^0.4.0",
@@ -55,7 +55,7 @@
     "style-loader": "^0.17.0",
     "surge": "latest",
     "url-loader": "^0.5.6",
-    "webpack": "2.4.1",
+    "webpack": "^2.5.1",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.13.0"
   }
