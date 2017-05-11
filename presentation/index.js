@@ -54,8 +54,8 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fill lineHeight={1} textColor="secondary">
-            Building a Node CLI with Commander.js
+          <Heading size={3} fill lineHeight={1} textColor="secondary">
+            Building an Elegant Node CLI with Modern Tools
           </Heading>
           <Text margin="1em 0 0" textColor="tertiary" textSize="48px">
             by Bernardo Pacheco
