@@ -7,12 +7,14 @@ import {
   Cite,
   Deck,
   Heading,
+  Image,
   ListItem,
   List,
   Quote,
   Slide,
   Text
 } from "spectacle";
+import CodeSlide from "spectacle-code-slide";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -28,7 +30,8 @@ const images = {
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/markdown.png"),
+  bored: require("../assets/bored.jpg")
 };
 
 preloader(images);
@@ -53,15 +56,61 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={3} fill lineHeight={1} textColor="secondary">
-            Building an Elegant Node CLI with Modern Tools
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={2} fill lineHeight={1} textColor="secondary">
+            Tools for Building a Modern Node CLI
           </Heading>
           <Text margin="1em 0 0" textColor="tertiary" textSize="48px">
             by Bernardo Pacheco
           </Text>
         </Slide>
-        <Slide transition={["zoom", "slide"]} bgColor="primary">
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={4} textColor="secondary" caps>
+            What is a CLI?
+          </Heading>
+          <BlockQuote>
+            <Quote textColor="primary" textSize="48px">
+              A command-line interface is a means of interacting with a computer program where
+              the user issues commands to the program in the form of successive lines of text
+            </Quote>
+            <Cite textColor="primary">Wikipedia</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <Heading size={4} textColor="secondary" caps>
+            CLI Examples
+          </Heading>
+          <List>
+            <ListItem>Ember CLI</ListItem>
+            <ListItem>Git</ListItem>
+            <ListItem>Homebrew</ListItem>
+            <ListItem>npm</ListItem>
+            <ListItem>Yarn</ListItem>
+            <ListItem>Yeoman</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Image src={images.bored} margin="0px auto 40px" />
+          <Heading size={4} caps fill textColor="tertiary">
+            Enough theory already... how do I build one?
+          </Heading>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/package.json.example")}
+          ranges={[
+            { loc: [0, 13], title: "Getting started" },
+            { loc: [8, 11] }
+          ]}
+        />
+
+        <Slide transition={["slide"]} bgColor="primary">
           <Heading size={6} textColor="secondary" caps>
             Typography
           </Heading>
