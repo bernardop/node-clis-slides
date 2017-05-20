@@ -1,0 +1,10 @@
+/* stylelint-disable */
+h1 {
+  border: none !important;
+  font-size: 3.82rem !important;
+  text-transform: uppercase;
+}
+
+pre {
+  padding: 25% 0 !important;
+}

@@ -25,13 +25,14 @@ import createTheme from "spectacle/lib/themes/default";
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
+require("./index.css");
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
-  bored: require("../assets/bored.jpg")
+  bored: require("../assets/bored.jpg"),
+  init: require("../assets/init.png"),
+  installGlobal: require("../assets/installGlobal.png")
 };
 
 preloader(images);
@@ -58,7 +59,7 @@ export default class Presentation extends React.Component {
       >
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={2} fill lineHeight={1} textColor="secondary">
-            Tools for Building a Modern Node CLI
+            Building a Node CLI with Commander
           </Heading>
           <Text margin="1em 0 0" textColor="tertiary" textSize="48px">
             by Bernardo Pacheco
@@ -93,22 +94,48 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.bored} margin="0px auto 40px" />
+          <Image src={images.bored} margin="0 auto 40px" />
           <Heading size={4} caps fill textColor="tertiary">
             Enough theory already... how do I build one?
           </Heading>
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={4} caps textColor="secondary">
+            Getting Started
+          </Heading>
+          <Image src={images.init} margin="10px auto 0" width="840px" />
+        </Slide>
+
         <CodeSlide
-          transition={[]}
+          transition={["slide"]}
           lang="javascript"
           bgColor="#263238"
           code={require("raw-loader!../assets/package.json.example")}
           ranges={[
-            { loc: [0, 13], title: "Getting started" },
-            { loc: [8, 11] }
+            { loc: [0, 13], title: "package.json" },
+            { loc: [8, 11], title: "Make it executable" }
           ]}
         />
+
+        <CodeSlide
+          transition={["slide"]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/index-01.example")}
+          ranges={[{ loc: [0, 2], title: "index.js" }]}
+        />
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={4} caps textColor="secondary">
+            Install and run
+          </Heading>
+          <Image
+            src={images.installGlobal}
+            margin="10px auto 0"
+            width="840px"
+          />
+        </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={6} textColor="secondary" caps>
