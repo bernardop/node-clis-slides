@@ -128,7 +128,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={4} caps textColor="secondary">
-            Install and run
+            Install, run & link
           </Heading>
           <Image
             src={images.installGlobal}
