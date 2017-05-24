@@ -114,7 +114,7 @@ export default class Presentation extends React.Component {
           code={require("raw-loader!../assets/package.json.example")}
           ranges={[
             { loc: [0, 13], title: "package.json" },
-            { loc: [8, 11], title: "Make it executable" }
+            { loc: [8, 11], title: "Install executable" }
           ]}
         />
 
@@ -123,7 +123,11 @@ export default class Presentation extends React.Component {
           lang="javascript"
           bgColor="#263238"
           code={require("raw-loader!../assets/index-01.example")}
-          ranges={[{ loc: [0, 2], title: "index.js" }]}
+          ranges={[
+            { loc: [0, 2], title: "index.js" },
+            { loc: [0, 1], title: "Add shebang" },
+            { loc: [1, 2], title: "Log a message" }
+          ]}
         />
 
         <Slide transition={["slide"]} bgColor="tertiary">
@@ -135,6 +139,12 @@ export default class Presentation extends React.Component {
             margin="10px auto 0"
             width="840px"
           />
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={4} caps textColor="secondary">
+            Parsing command line options
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
