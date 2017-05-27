@@ -1,12 +1,11 @@
 {
-  "name": "semjs-cli",
+  "name": "unspray",
   "version": "1.0.0",
   "description": "An example CLI for SEM.js",
   "main": "index.js",
-  "repository": "https://github.com/bernardop/semjs-cli.git",
   "author": "Bernardo Pacheco",
   "license": "MIT",
   "bin": {
-      "semjs": "./index.js"
+      "unspray": "./index.js"
   }
 }

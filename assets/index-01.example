@@ -1,2 +1,7 @@
 #!/usr/bin/env node
-console.log("Hello SEM.js");
+var figlet = require("figlet");
+var chalk = require("chalk");
+
+figlet("Hello SEM.js", function(err, data) {
+  console.log(chalk.yellow(data));
+});

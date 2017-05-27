@@ -5,6 +5,7 @@ import React from "react";
 import {
   BlockQuote,
   Cite,
+  Code,
   Deck,
   Heading,
   Image,
@@ -100,6 +101,20 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={4} caps fill textColor="secondary">
+            What are we building?
+          </Heading>
+          <Text caps margin="1em 0" textColor="tertiary">
+            Unspray
+          </Text>
+          <List textColor="tertiary">
+            <ListItem>Search Unsplash.com for photos</ListItem>
+            <ListItem>Save a photo to our computer</ListItem>
+            <ListItem>Set a photo as wallpaper</ListItem>
+          </List>
+        </Slide>
+
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={4} caps textColor="secondary">
             Getting Started
@@ -114,7 +129,7 @@ export default class Presentation extends React.Component {
           code={require("raw-loader!../assets/package.json.example")}
           ranges={[
             { loc: [0, 13], title: "package.json" },
-            { loc: [8, 11], title: "Install executable" }
+            { loc: [7, 10], title: "Install executable" }
           ]}
         />
 
@@ -124,21 +139,16 @@ export default class Presentation extends React.Component {
           bgColor="#263238"
           code={require("raw-loader!../assets/index-01.example")}
           ranges={[
-            { loc: [0, 2], title: "index.js" },
+            { loc: [0, 8], title: "index.js" },
             { loc: [0, 1], title: "Add shebang" },
-            { loc: [1, 2], title: "Log a message" }
+            { loc: [1, 8], title: "Log a message" }
           ]}
         />
 
         <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading size={4} caps textColor="secondary">
-            Install, run & link
-          </Heading>
-          <Image
-            src={images.installGlobal}
-            margin="10px auto 0"
-            width="840px"
-          />
+          <Code>npm install -g</Code>
+          <Image src={images.installGlobal} margin="0 auto" width="840px" />
+          <Code margin="-0.5rem 0 0 0">npm link</Code>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
