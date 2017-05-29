@@ -3,6 +3,7 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
   Code,
@@ -33,7 +34,8 @@ const images = {
   markdown: require("../assets/markdown.png"),
   bored: require("../assets/bored.jpg"),
   init: require("../assets/init.png"),
-  installGlobal: require("../assets/installGlobal.png")
+  installGlobal: require("../assets/installGlobal.png"),
+  bash: require("../assets/bash.png")
 };
 
 preloader(images);
@@ -101,18 +103,43 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
+        <Slide transition={["slide"]} bgColor="primary" textAlign="left">
           <Heading size={4} caps fill textColor="secondary">
             What are we building?
           </Heading>
-          <Text caps margin="1em 0" textColor="tertiary">
+          <Heading size={6} caps textColor="tertiary" margin="2rem 0 3rem">
             Unspray
-          </Text>
-          <List textColor="tertiary">
-            <ListItem>Search Unsplash.com for photos</ListItem>
-            <ListItem>Save a photo to our computer</ListItem>
-            <ListItem>Set a photo as wallpaper</ListItem>
-          </List>
+          </Heading>
+          <Appear>
+            <Text textColor="tertiary" margin="0 0 1rem" textAlign="left">
+              Search Unsplash.com for photos
+            </Text>
+          </Appear>
+          <Appear>
+            <Code bgColor="#666" textColor="tertiary" textSize="2rem">
+              ➜ unspray search -q beach -m 20
+            </Code>
+          </Appear>
+          <Appear>
+            <Text textColor="tertiary" margin="2rem 0 1rem" textAlign="left">
+              Save a photo to your computer
+            </Text>
+          </Appear>
+          <Appear>
+            <Code bgColor="#666" textColor="tertiary" textSize="2rem">
+              ➜ unspray save -i 2UbJtgQp8VQ -d unspray
+            </Code>
+          </Appear>
+          <Appear>
+            <Text textColor="tertiary" margin="2rem 0 1rem" textAlign="left">
+              Set a photo as your wallpaper
+            </Text>
+          </Appear>
+          <Appear>
+            <Code bgColor="#666" textColor="tertiary" textSize="2rem">
+              ➜ unspray set-wallpaper -i 2UbJtgQp8VQ -s fill
+            </Code>
+          </Appear>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="tertiary">
@@ -133,18 +160,6 @@ export default class Presentation extends React.Component {
           ]}
         />
 
-        <CodeSlide
-          transition={["slide"]}
-          lang="javascript"
-          bgColor="#263238"
-          code={require("raw-loader!../assets/index-01.example")}
-          ranges={[
-            { loc: [0, 8], title: "index.js" },
-            { loc: [0, 1], title: "Add shebang" },
-            { loc: [1, 8], title: "Log a message" }
-          ]}
-        />
-
         <Slide transition={["slide"]} bgColor="tertiary">
           <Code>npm install -g</Code>
           <Image src={images.installGlobal} margin="0 auto" width="840px" />
@@ -153,9 +168,46 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={4} caps textColor="secondary">
-            Parsing command line options
+            Parsing command line arguments
+          </Heading>
+          <Appear>
+            <Image src={images.bash} margin="2rem auto 0" width="840px" />
+          </Appear>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={4} textColor="tertiary">
+            npm install commander -S
           </Heading>
         </Slide>
+
+        <CodeSlide
+          transition={["slide"]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/index-02.example")}
+          ranges={[
+            { loc: [2, 3], title: "Require it" },
+            { loc: [8, 10], title: "Version" },
+            { loc: [10, 14], title: "Search Command" },
+            { loc: [14, 18], title: "Save Command" },
+            { loc: [18, 22], title: "Set Wallpaper Command" },
+            { loc: [22, 23], title: "Parse" }
+          ]}
+        />
+
+        <CodeSlide
+          transition={["slide"]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/unspray-search.example")}
+          ranges={[
+            { loc: [0, 2], title: "unspray-search.js" },
+            { loc: [7, 12], title: "options/flags" },
+            { loc: [12, 18], title: "options/flags" },
+            { loc: [20, 29], title: "Use values" }
+          ]}
+        />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={6} textColor="secondary" caps>

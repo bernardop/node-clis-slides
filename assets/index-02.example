@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+const figlet = require("figlet");
+const program = require("commander");
+const package = require("./package.json");
+
+figlet("UNSPRAY", (err, data) => {
+  console.log(chalk.yellow(data));
+
+  program
+    .version(package.version)
+    .command(
+      "search",
+      "Search Unsplash photos"
+    )
+    .command(
+      "save",
+      "Save photo"
+    )
+    .command(
+      "set-wallpaper",
+      "Set photo as wallpaper"
+    )
+    .parse(process.argv);
+
+  if (program.args.length === 0) {
+    program.help();
+  }
+});
