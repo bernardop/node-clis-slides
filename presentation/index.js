@@ -30,8 +30,6 @@ require("spectacle/lib/themes/default/index.css");
 require("./index.css");
 
 const images = {
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png"),
   bored: require("../assets/bored.jpg"),
   init: require("../assets/init.png"),
   installGlobal: require("../assets/installGlobal.png"),
@@ -55,12 +53,8 @@ const theme = createTheme(
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck
-        transition={["zoom", "slide"]}
-        transitionDuration={500}
-        theme={theme}
-      >
-        <Slide transition={["slide"]} bgColor="primary">
+      <Deck transition={["fade"]} transitionDuration={500} theme={theme}>
+        <Slide transition={["fade"]} bgColor="primary">
           <Heading size={2} fill lineHeight={1} textColor="secondary">
             Building a Node CLI with Commander
           </Heading>
@@ -69,7 +63,7 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={4} textColor="secondary" caps>
             What is a CLI?
           </Heading>
@@ -82,28 +76,28 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={4} textColor="secondary" caps>
             CLI Examples
           </Heading>
           <List>
             <ListItem>Ember CLI</ListItem>
-            <ListItem>Git</ListItem>
-            <ListItem>Homebrew</ListItem>
-            <ListItem>npm</ListItem>
-            <ListItem>Yarn</ListItem>
-            <ListItem>Yeoman</ListItem>
+            <Appear><ListItem>Git</ListItem></Appear>
+            <Appear><ListItem>Homebrew</ListItem></Appear>
+            <Appear><ListItem>npm</ListItem></Appear>
+            <Appear><ListItem>Yarn</ListItem></Appear>
+            <Appear><ListItem>Yeoman</ListItem></Appear>
           </List>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
+        <Slide transition={["fade"]} bgColor="primary">
           <Image src={images.bored} margin="0 auto 40px" />
           <Heading size={4} caps fill textColor="tertiary">
             Enough theory already... how do I build one?
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary" textAlign="left">
+        <Slide transition={["fade"]} bgColor="primary" textAlign="left">
           <Heading size={4} caps fill textColor="secondary">
             What are we building?
           </Heading>
@@ -142,7 +136,7 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={4} caps textColor="secondary">
             Getting Started
           </Heading>
@@ -150,7 +144,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <CodeSlide
-          transition={["slide"]}
+          transition={["fade"]}
           lang="javascript"
           bgColor="#263238"
           code={require("raw-loader!../assets/package.json.example")}
@@ -160,13 +154,27 @@ export default class Presentation extends React.Component {
           ]}
         />
 
-        <Slide transition={["slide"]} bgColor="tertiary">
+        <CodeSlide
+          transition={["fade"]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/index-01.example")}
+          ranges={[
+            { loc: [0, 8], title: "index.js" },
+            { loc: [0, 1], title: "shebang" },
+            { loc: [4, 7], title: "Log a message" }
+          ]}
+        />
+
+        <Slide transition={["fade"]} bgColor="tertiary">
           <Code>npm install -g</Code>
-          <Image src={images.installGlobal} margin="0 auto" width="840px" />
-          <Code margin="-0.5rem 0 0 0">npm link</Code>
+          <Appear>
+            <Image src={images.installGlobal} margin="0 auto" width="840px" />
+          </Appear>
+          <Appear><Code margin="-0.5rem 0 0 0">npm link</Code></Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
+        <Slide transition={["fade"]} bgColor="primary">
           <Heading size={4} caps textColor="secondary">
             Parsing command line arguments
           </Heading>
@@ -175,67 +183,71 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
+        <Slide transition={["fade"]} bgColor="primary">
           <Heading size={4} textColor="tertiary">
             npm install commander -S
           </Heading>
         </Slide>
 
         <CodeSlide
-          transition={["slide"]}
+          transition={["fade"]}
           lang="javascript"
           bgColor="#263238"
           code={require("raw-loader!../assets/index-02.example")}
           ranges={[
-            { loc: [2, 3], title: "Require it" },
+            { loc: [0, 29], title: "index.js" },
+            { loc: [2, 3], title: "Require commander" },
             { loc: [8, 10], title: "Version" },
             { loc: [10, 14], title: "Search Command" },
             { loc: [14, 18], title: "Save Command" },
             { loc: [18, 22], title: "Set Wallpaper Command" },
-            { loc: [22, 23], title: "Parse" }
+            { loc: [22, 23], title: "Parse" },
+            { loc: [24, 27], title: "Help" }
           ]}
         />
 
         <CodeSlide
-          transition={["slide"]}
+          transition={["fade"]}
           lang="javascript"
           bgColor="#263238"
           code={require("raw-loader!../assets/unspray-search.example")}
           ranges={[
-            { loc: [0, 2], title: "unspray-search.js" },
+            { loc: [0, 43], title: "unspray-search.js" },
+            { loc: [0, 2], title: "Shebang & require" },
             { loc: [7, 12], title: "options/flags" },
             { loc: [12, 18], title: "options/flags" },
-            { loc: [20, 29], title: "Use values" }
+            { loc: [18, 19], title: "Parse" },
+            { loc: [24, 26], title: "Use values" }
           ]}
         />
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={6} textColor="secondary" caps>
-            Typography
-          </Heading>
-          <Heading size={1} textColor="tertiary">Heading 1</Heading>
-          <Heading size={2} textColor="tertiary">Heading 2</Heading>
-          <Heading size={3} textColor="tertiary">Heading 3</Heading>
-          <Heading size={4} textColor="tertiary">Heading 4</Heading>
-          <Heading size={5} textColor="tertiary">Heading 5</Heading>
-          <Text size={6} textColor="tertiary">Standard text</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
-          </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        <CodeSlide
+          transition={["fade"]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/unspray-save.example")}
+          ranges={[
+            { loc: [0, 66], title: "unspray-save.js" },
+            { loc: [20, 24], title: "photo id" },
+            { loc: [24, 30], title: "directory" },
+            { loc: [11, 14], title: "coercion function" },
+            { loc: [30, 36], title: "Regex" }
+          ]}
+        />
+
+        <CodeSlide
+          transition={["fade"]}
+          lang="javascript"
+          bgColor="#263238"
+          code={require("raw-loader!../assets/unspray-set-wallpaper.example")}
+          ranges={[
+            { loc: [0, 76], title: "unspray-set-wallpaper.js" },
+            { loc: [37, 43], title: "wallpaper scale" }
+          ]}
+        />
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading caps size={2} textColor="tertiary">Demo Time</Heading>
         </Slide>
       </Deck>
     );
