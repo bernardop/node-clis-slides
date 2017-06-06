@@ -8,3 +8,9 @@ h1 {
 pre {
   padding: 25% 0 !important;
 }
+
+code.fragment {
+  display: block;
+  text-align: left;
+  width: 100%;
+}

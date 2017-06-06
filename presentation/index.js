@@ -10,6 +10,7 @@ import {
   Deck,
   Heading,
   Image,
+  Layout,
   ListItem,
   List,
   Quote,
@@ -33,7 +34,8 @@ const images = {
   bored: require("../assets/bored.jpg"),
   init: require("../assets/init.png"),
   installGlobal: require("../assets/installGlobal.png"),
-  bash: require("../assets/bash.png")
+  bash: require("../assets/bash.png"),
+  unsplash: require("../assets/unsplash.png")
 };
 
 preloader(images);
@@ -69,8 +71,11 @@ export default class Presentation extends React.Component {
           </Heading>
           <BlockQuote>
             <Quote textColor="primary" textSize="48px">
-              A command-line interface is a means of interacting with a computer program where
-              the user issues commands to the program in the form of successive lines of text
+              A <u>C</u>ommand-<u>L</u>ine <u>I</u>nterface is a means of
+              interacting with a
+              computer program where
+              the user issues commands to the program in the form of successive
+              lines of text
             </Quote>
             <Cite textColor="primary">Wikipedia</Cite>
           </BlockQuote>
@@ -97,7 +102,12 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" textAlign="left">
+        <Slide
+          transition={["fade"]}
+          bgDarken={0.75}
+          textAlign="left"
+          bgImage={images.unsplash}
+        >
           <Heading size={4} caps fill textColor="secondary">
             What are we building?
           </Heading>
@@ -110,7 +120,12 @@ export default class Presentation extends React.Component {
             </Text>
           </Appear>
           <Appear>
-            <Code bgColor="#666" textColor="tertiary" textSize="2rem">
+            <Code
+              bgColor="#666"
+              textColor="tertiary"
+              textSize="2rem"
+              className="code--left"
+            >
               ➜ unspray search -q beach -m 20
             </Code>
           </Appear>
