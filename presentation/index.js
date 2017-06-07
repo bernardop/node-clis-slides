@@ -10,7 +10,6 @@ import {
   Deck,
   Heading,
   Image,
-  Layout,
   ListItem,
   List,
   Quote,
@@ -126,7 +125,7 @@ export default class Presentation extends React.Component {
               textSize="2rem"
               className="code--left"
             >
-              ➜ unspray search -q beach -m 20
+              ➜ unspray search -q beach -p 1 -r 20
             </Code>
           </Appear>
           <Appear>
@@ -136,7 +135,7 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Code bgColor="#666" textColor="tertiary" textSize="2rem">
-              ➜ unspray save -i 2UbJtgQp8VQ -d unspray
+              ➜ unspray save -i 2UbJtgQp8VQ -Q thumb
             </Code>
           </Appear>
           <Appear>
@@ -186,7 +185,11 @@ export default class Presentation extends React.Component {
           <Appear>
             <Image src={images.installGlobal} margin="0 auto" width="840px" />
           </Appear>
-          <Appear><Code margin="-0.5rem 0 0 0">npm link</Code></Appear>
+          <Appear>
+            <Code margin="-0.5rem 0 0 0">
+              npm link
+            </Code>
+          </Appear>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
@@ -227,12 +230,13 @@ export default class Presentation extends React.Component {
           bgColor="#263238"
           code={require("raw-loader!../assets/unspray-search.example")}
           ranges={[
-            { loc: [0, 43], title: "unspray-search.js" },
+            { loc: [0, 48], title: "unspray-search.js" },
             { loc: [0, 2], title: "Shebang & require" },
             { loc: [7, 12], title: "options/flags" },
-            { loc: [12, 18], title: "options/flags" },
-            { loc: [18, 19], title: "Parse" },
-            { loc: [24, 26], title: "Use values" }
+            { loc: [12, 16], title: "options/flags" },
+            { loc: [16, 22], title: "options/flags" },
+            { loc: [22, 23], title: "Parse" },
+            { loc: [27, 31], title: "Use values" }
           ]}
         />
 

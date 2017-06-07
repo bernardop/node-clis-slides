@@ -14,3 +14,9 @@ code.fragment {
   text-align: left;
   width: 100%;
 }
+
+code.fragment:nth-child(3) {
+  display: inline;
+  text-align: center;
+  width: auto;
+}
