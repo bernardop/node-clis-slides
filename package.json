@@ -2,6 +2,7 @@
   "name": "node-clis-slides",
   "version": "1.0.0",
   "description": "SEM.js Node CLIs Lightning Talk Presentation",
+  "repository": "https://github.com/bernardop/node-clis-slides.git",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",

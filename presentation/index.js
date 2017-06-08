@@ -35,7 +35,7 @@ const images = {
   init: require("../assets/init.png"),
   installGlobal: require("../assets/installGlobal.png"),
   bash: require("../assets/bash.png"),
-  unsplash: require("../assets/unsplash.png")
+  unsplash: require("../assets/unsplash.jpg")
 };
 
 preloader(images);
