@@ -13,6 +13,7 @@ import {
   ListItem,
   List,
   Quote,
+  S,
   Slide,
   Text
 } from "spectacle";
@@ -110,9 +111,11 @@ export default class Presentation extends React.Component {
           <Heading size={4} caps fill textColor="secondary">
             What are we building?
           </Heading>
-          <Heading size={6} caps textColor="tertiary" margin="2rem 0 3rem">
-            Unspray
-          </Heading>
+          <Appear>
+            <Heading size={6} caps textColor="tertiary" margin="2rem 0 3rem">
+              Unspray
+            </Heading>
+          </Appear>
           <Appear>
             <Text textColor="tertiary" margin="0 0 1rem" textAlign="left">
               Search Unsplash.com for photos
@@ -267,6 +270,73 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="primary">
           <Heading caps size={2} textColor="tertiary">Demo Time</Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={4} caps textColor="secondary" margin="0 0 1em">
+            Learn more
+          </Heading>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">chalk</S> - https://github.com/chalk/chalk
+          </Text>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">commander.js</S> - https://github.com/tj/commander.js
+          </Text>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">figlet.js</S> - https://github.com/patorjk/figlet.js
+          </Text>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">imgcat</S> - https://github.com/egoist/imgcat
+          </Text>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">ora</S> - https://github.com/sindresorhus/ora
+          </Text>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">request</S> - https://github.com/request/request
+          </Text>
+          <Text
+            textSize="32px"
+            margin="0.5em 0"
+            textColor="tertiary"
+            textAlign="left"
+          >
+            <S type="bold">wallpaper</S> -
+            https://github.com/sindresorhus/wallpaper
+          </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading caps size={2} textColor="tertiary">Thank You</Heading>
         </Slide>
       </Deck>
     );
