@@ -231,7 +231,7 @@ export default class Presentation extends React.Component {
           code={require("raw-loader!../assets/unspray-save.example")}
           ranges={[
             { loc: [0, 66], title: "unspray-save.js" },
-            { loc: [20, 24], title: "photo id" },
+            { loc: [19, 24], title: "photo id" },
             { loc: [24, 30], title: "directory" },
             { loc: [11, 14], title: "coercion function" },
             { loc: [30, 36], title: "Regex" }
