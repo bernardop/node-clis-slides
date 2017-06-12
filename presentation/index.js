@@ -81,20 +81,6 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={4} textColor="secondary" caps>
-            CLI Examples
-          </Heading>
-          <List>
-            <ListItem>Ember CLI</ListItem>
-            <Appear><ListItem>Git</ListItem></Appear>
-            <Appear><ListItem>Homebrew</ListItem></Appear>
-            <Appear><ListItem>npm</ListItem></Appear>
-            <Appear><ListItem>Yarn</ListItem></Appear>
-            <Appear><ListItem>Yeoman</ListItem></Appear>
-          </List>
-        </Slide>
-
         <Slide transition={["fade"]} bgColor="primary">
           <Image src={images.bored} margin="0 auto 40px" />
           <Heading size={4} caps fill textColor="tertiary">
@@ -184,14 +170,9 @@ export default class Presentation extends React.Component {
         />
 
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Code>npm install -g</Code>
+          <Code>npm link</Code>
           <Appear>
             <Image src={images.installGlobal} margin="0 auto" width="840px" />
-          </Appear>
-          <Appear>
-            <Code margin="-0.5rem 0 0 0">
-              npm link
-            </Code>
           </Appear>
         </Slide>
 
